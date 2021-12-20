@@ -1,0 +1,6 @@
+framework module Target2sellSDK {
+    umbrella header "Target2sellSDK.h"
+
+    export *
+    module * { export * }
+}
