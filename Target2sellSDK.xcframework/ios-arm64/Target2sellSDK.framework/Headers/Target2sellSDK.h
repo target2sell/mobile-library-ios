@@ -211,6 +211,7 @@ __attribute__((swift_name("Target2SellLibrary")))
  Other uncaught Kotlin exceptions are fatal.
 */
 - (void)getRecommendationsRecommendationParameters:(TSDKRecommendationParameters *)recommendationParameters completionHandler:(void (^)(TSDKResource<NSString *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getRecommendations(recommendationParameters:completionHandler:)")));
+- (NSString * _Nullable)getUUID __attribute__((swift_name("getUUID()")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -341,7 +342,8 @@ __attribute__((swift_name("Target2SellUserAgent")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TrackingParameters")))
 @interface TSDKTrackingParameters : TSDKBase
-- (instancetype)initWithPageId:(int32_t)pageId userEmail:(NSString * _Nullable)userEmail userId:(NSString * _Nullable)userId eventType:(NSString * _Nullable)eventType spaceId:(NSString * _Nullable)spaceId productPosition:(NSString * _Nullable)productPosition basketProduct:(NSString * _Nullable)basketProduct language:(NSString * _Nullable)language domain:(NSString * _Nullable)domain itemId:(NSString * _Nullable)itemId categoryId:(TSDKInt * _Nullable)categoryId cartTotalAmount:(TSDKDouble * _Nullable)cartTotalAmount productQuantity:(NSString * _Nullable)productQuantity keywords:(NSString * _Nullable)keywords orderId:(NSString * _Nullable)orderId priceList:(NSString * _Nullable)priceList userRank:(NSString * _Nullable)userRank crm_XXX:(NSString * _Nullable)crm_XXX algorithm:(NSString * _Nullable)algorithm mediaRuleId:(NSString * _Nullable)mediaRuleId mediaCampaignId:(NSString * _Nullable)mediaCampaignId mediaAlgo:(NSString * _Nullable)mediaAlgo any:(NSString * _Nullable)any __attribute__((swift_name("init(pageId:userEmail:userId:eventType:spaceId:productPosition:basketProduct:language:domain:itemId:categoryId:cartTotalAmount:productQuantity:keywords:orderId:priceList:userRank:crm_XXX:algorithm:mediaRuleId:mediaCampaignId:mediaAlgo:any:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithPageId:(int32_t)pageId trackingId:(NSString *)trackingId __attribute__((swift_name("init(pageId:trackingId:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithPageId:(int32_t)pageId userEmail:(NSString * _Nullable)userEmail userId:(NSString * _Nullable)userId eventType:(NSString * _Nullable)eventType spaceId:(NSString * _Nullable)spaceId productPosition:(NSString * _Nullable)productPosition basketProduct:(NSString * _Nullable)basketProduct language:(NSString * _Nullable)language domain:(NSString * _Nullable)domain itemId:(NSString * _Nullable)itemId categoryId:(TSDKInt * _Nullable)categoryId cartTotalAmount:(TSDKDouble * _Nullable)cartTotalAmount productQuantity:(NSString * _Nullable)productQuantity keywords:(NSString * _Nullable)keywords orderId:(NSString * _Nullable)orderId priceList:(NSString * _Nullable)priceList userRank:(NSString * _Nullable)userRank crm_XXX:(NSString * _Nullable)crm_XXX algorithm:(NSString * _Nullable)algorithm mediaRuleId:(NSString * _Nullable)mediaRuleId mediaCampaignId:(NSString * _Nullable)mediaCampaignId mediaAlgo:(NSString * _Nullable)mediaAlgo any:(NSString * _Nullable)any trackingId:(NSString * _Nullable)trackingId __attribute__((swift_name("init(pageId:userEmail:userId:eventType:spaceId:productPosition:basketProduct:language:domain:itemId:categoryId:cartTotalAmount:productQuantity:keywords:orderId:priceList:userRank:crm_XXX:algorithm:mediaRuleId:mediaCampaignId:mediaAlgo:any:trackingId:)"))) __attribute__((objc_designated_initializer));
 - (int32_t)component1 __attribute__((swift_name("component1()")));
 - (NSString * _Nullable)component10 __attribute__((swift_name("component10()")));
 - (TSDKInt * _Nullable)component11 __attribute__((swift_name("component11()")));
@@ -358,6 +360,7 @@ __attribute__((swift_name("TrackingParameters")))
 - (NSString * _Nullable)component21 __attribute__((swift_name("component21()")));
 - (NSString * _Nullable)component22 __attribute__((swift_name("component22()")));
 - (NSString * _Nullable)component23 __attribute__((swift_name("component23()")));
+- (NSString * _Nullable)component24 __attribute__((swift_name("component24()")));
 - (NSString * _Nullable)component3 __attribute__((swift_name("component3()")));
 - (NSString * _Nullable)component4 __attribute__((swift_name("component4()")));
 - (NSString * _Nullable)component5 __attribute__((swift_name("component5()")));
@@ -365,7 +368,7 @@ __attribute__((swift_name("TrackingParameters")))
 - (NSString * _Nullable)component7 __attribute__((swift_name("component7()")));
 - (NSString * _Nullable)component8 __attribute__((swift_name("component8()")));
 - (NSString * _Nullable)component9 __attribute__((swift_name("component9()")));
-- (TSDKTrackingParameters *)doCopyPageId:(int32_t)pageId userEmail:(NSString * _Nullable)userEmail userId:(NSString * _Nullable)userId eventType:(NSString * _Nullable)eventType spaceId:(NSString * _Nullable)spaceId productPosition:(NSString * _Nullable)productPosition basketProduct:(NSString * _Nullable)basketProduct language:(NSString * _Nullable)language domain:(NSString * _Nullable)domain itemId:(NSString * _Nullable)itemId categoryId:(TSDKInt * _Nullable)categoryId cartTotalAmount:(TSDKDouble * _Nullable)cartTotalAmount productQuantity:(NSString * _Nullable)productQuantity keywords:(NSString * _Nullable)keywords orderId:(NSString * _Nullable)orderId priceList:(NSString * _Nullable)priceList userRank:(NSString * _Nullable)userRank crm_XXX:(NSString * _Nullable)crm_XXX algorithm:(NSString * _Nullable)algorithm mediaRuleId:(NSString * _Nullable)mediaRuleId mediaCampaignId:(NSString * _Nullable)mediaCampaignId mediaAlgo:(NSString * _Nullable)mediaAlgo any:(NSString * _Nullable)any __attribute__((swift_name("doCopy(pageId:userEmail:userId:eventType:spaceId:productPosition:basketProduct:language:domain:itemId:categoryId:cartTotalAmount:productQuantity:keywords:orderId:priceList:userRank:crm_XXX:algorithm:mediaRuleId:mediaCampaignId:mediaAlgo:any:)")));
+- (TSDKTrackingParameters *)doCopyPageId:(int32_t)pageId userEmail:(NSString * _Nullable)userEmail userId:(NSString * _Nullable)userId eventType:(NSString * _Nullable)eventType spaceId:(NSString * _Nullable)spaceId productPosition:(NSString * _Nullable)productPosition basketProduct:(NSString * _Nullable)basketProduct language:(NSString * _Nullable)language domain:(NSString * _Nullable)domain itemId:(NSString * _Nullable)itemId categoryId:(TSDKInt * _Nullable)categoryId cartTotalAmount:(TSDKDouble * _Nullable)cartTotalAmount productQuantity:(NSString * _Nullable)productQuantity keywords:(NSString * _Nullable)keywords orderId:(NSString * _Nullable)orderId priceList:(NSString * _Nullable)priceList userRank:(NSString * _Nullable)userRank crm_XXX:(NSString * _Nullable)crm_XXX algorithm:(NSString * _Nullable)algorithm mediaRuleId:(NSString * _Nullable)mediaRuleId mediaCampaignId:(NSString * _Nullable)mediaCampaignId mediaAlgo:(NSString * _Nullable)mediaAlgo any:(NSString * _Nullable)any trackingId:(NSString * _Nullable)trackingId __attribute__((swift_name("doCopy(pageId:userEmail:userId:eventType:spaceId:productPosition:basketProduct:language:domain:itemId:categoryId:cartTotalAmount:productQuantity:keywords:orderId:priceList:userRank:crm_XXX:algorithm:mediaRuleId:mediaCampaignId:mediaAlgo:any:trackingId:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -389,6 +392,7 @@ __attribute__((swift_name("TrackingParameters")))
 @property (readonly) NSString * _Nullable productPosition __attribute__((swift_name("productPosition")));
 @property (readonly) NSString * _Nullable productQuantity __attribute__((swift_name("productQuantity")));
 @property (readonly) NSString * _Nullable spaceId __attribute__((swift_name("spaceId")));
+@property (readonly) NSString * _Nullable trackingId __attribute__((swift_name("trackingId")));
 @property (readonly) NSString * _Nullable userEmail __attribute__((swift_name("userEmail")));
 @property (readonly) NSString * _Nullable userId __attribute__((swift_name("userId")));
 @property (readonly) NSString * _Nullable userRank __attribute__((swift_name("userRank")));
